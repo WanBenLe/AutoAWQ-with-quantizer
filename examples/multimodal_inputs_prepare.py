@@ -188,6 +188,7 @@ class LlavaNextForConditionalGenerationNew(LlavaNextForConditionalGeneration):
             elif type(tmp)==bool:
                 out_before_language_model[key]=tmp
             else:
+                out_before_language_model[key]=tmp.cpu().numpy()
         return out_before_language_model
         
 logging.basicConfig(level=logging.DEBUG)
